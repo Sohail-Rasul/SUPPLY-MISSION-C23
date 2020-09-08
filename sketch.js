@@ -1,5 +1,5 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground,B,L,R;
+var packageBody,ground;
 var engine,world;
 const Engine = Matter.Engine;
 const World = Matter.World;
@@ -30,15 +30,14 @@ function setup() {
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
 
-    B=createSprite(400,670,200,20);
-    L=createSprite(300,630,20,100);
-    R=createSprite(500,630,20,100);
-    B.shapeColor=color(255,0,0);
-    L.shapeColor=color(255,0,0);
-    R.shapeColor=color(255,0,0);
+    // B=createSprite(400,670,200,20);
+    // L=createSprite(300,630,20,100);
+    // R=createSprite(500,630,20,100);
+    // B.shapeColor=color(255,0,0);
+    // L.shapeColor=color(255,0,0);
+    // R.shapeColor=color(255,0,0);
 
-	engine = Engine.create();
-	world = engine.world;
+	
 
 	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.2, isStatic:true});
 	World.add(world, packageBody);
@@ -50,7 +49,9 @@ function setup() {
 
 
 	Engine.run(engine);
-  
+  box=new dropBox(400,500,PI);
+  boxR=new dropBox(425,500,PI/10);
+  boxL=new dropBox(450,500,PI/10)
 }
 
 
@@ -61,6 +62,9 @@ function draw() {
   packageSprite.y= packageBody.position.y 
   drawSprites();
  keyPressed();
+ box.display();
+ boxR.display();
+ boxL.display();
 }
 
 function keyPressed() {
