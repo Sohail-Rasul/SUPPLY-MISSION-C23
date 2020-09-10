@@ -49,9 +49,9 @@ function setup() {
 
 
 	Engine.run(engine);
-  box=new dropBox(400,500,PI);
-  boxR=new dropBox(425,500,PI/10);
-  boxL=new dropBox(450,500,PI/10)
+	box=new DropBox(400,665,15,100);
+  	box2=new DropBox(450,625,100,20);
+  	box3=new DropBox(350,625,100,20);
 }
 
 
@@ -63,8 +63,8 @@ function draw() {
   drawSprites();
  keyPressed();
  box.display();
- boxR.display();
- boxL.display();
+ box2.display();
+ box3.display();
 }
 
 function keyPressed() {
